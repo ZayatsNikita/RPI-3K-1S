@@ -1,0 +1,3 @@
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_a_parameter
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions
+https://metanit.com/web/javascript/6.2.php

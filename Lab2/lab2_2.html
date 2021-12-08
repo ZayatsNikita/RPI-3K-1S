@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+    <body>
+        <script>
+            "use strict";
+            document.title = "Mikita Zayats";
+            while(true){
+                let languageName;
+                let lang = prompt("Введите код языка", "");
+                lang = lang.toLowerCase();
+                try
+                {
+                    switch (lang){
+                        case "ru":
+                            languageName = "русский";
+                            break;
+                        case "en" : 
+                            languageName = "английски";
+                            break;
+                        case "fr" :
+                            languageName = "французский";
+                            break;
+                        case "de":
+                            languageName = "немецкий";
+                            break;
+                        default :
+                            throw "Неверный язык";
+                    }
+                }
+                catch (ex){
+                    languageName = ex;
+                }
+                finally{
+                    alert(languageName);
+                }
+            }
+
+        </script>
+    </body>
+</html>

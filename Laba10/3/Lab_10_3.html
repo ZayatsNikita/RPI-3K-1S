@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        td,
+		th {
+			margin: auto;
+			margin-top: 250px;
+			border: 1px solid black;
+		}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="jQuery.js"></script>
+   <title>Zayats Mikita</title>
+</head>
+<body>
+    <input id="inputDate" type="date">
+    <button id="showCalendar">Show Month</button>
+    <table></table>
+<script>
+        function ShowMonth()
+        {
+            let stringDate = $("#inputDate").val();
+            let arrayDate = stringDate.replace(/\D/g, ' ').split(' ');
+            let date = new Date(parseInt(arrayDate[0]), parseInt(arrayDate[1]) - 1);
+            let tableCreator = '<thead><th>Monday</th>' + 
+                                          '<th>Tuesday</th>' + 
+                                          '<th>Wednesday</th>' +
+                                          '<th>Thursday</th>' + 
+                                          '<th>Friday</th>' + 
+                                          '<th>Saturday</th>' + 
+                                          '<th>Sunday</th><thead>';
+            $('table>thead').remove()
+
+            if (date.getDay() == 0)
+            {
+                for (let i = 0; i < 6; i++)
+                {
+                    tableCreator += '<td></td>';
+                }
+            }
+
+            for (day = 0; day < date.getDay() - 1; day++) 
+            {
+                tableCreator += '<td></td>';
+            }
+            
+            let month = date.getMonth()
+            while (date.getMonth() == month) 
+            {
+                if (day >= 8) 
+                {
+                    tableCreator += '</tr><tr>'
+                    day = 0
+                }
+
+                tableCreator += '<td>' + date.getDate() + '</td>'
+
+                if (date.getDay() == 0)
+                {
+                    tableCreator += '</tr><tr>';
+                    day = 0;
+                }
+
+                day++
+                date.setDate(date.getDate() + 1)
+            }
+
+            $('table>tbody').remove()
+
+            while(day <= 7) 
+            {
+                tableCreator += '<td></td>'
+                day++
+            }
+
+            $('table').append(tableCreator)
+        }
+
+        $("#showCalendar").bind("click", ShowMonth)
+    </script>
+</body>
+</html>

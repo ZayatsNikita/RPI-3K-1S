@@ -1,0 +1,26 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#orbit {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color:red;
+    border-radius: 50%;
+}
+
+#circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color:greenyellow;
+    border-radius: 30%;
+}

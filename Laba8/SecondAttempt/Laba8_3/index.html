@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>zadanie_1</title>
+
+</head>
+<body>
+<div id="description">
+    </strong>
+    </p>
+    <div id="content">
+    </div>
+</div>
+
+<div id="main_content">
+
+    <div class="block">
+
+        <div id="elements">
+            <label>Выравнивание</label>
+            <p><input id="LEFT"   type="radio" name="alignments" value="LEFT"><label for="LEFT"> LEFT</label></p>
+            <p><input id="CENTER" type="radio" name="alignments" value="CENTER"><label for="CENTER"> CENTER</label></p>
+            <p><input id="RIGHT"  type="radio" name="alignments" value="RIGHT"><label for="RIGHT"> RIGHT</label></p>
+            <p><input class="line" type="text"><label> Толщина линии</label></p>
+            <p><input class="line" type="text"> <label> Длина линии</label></p>
+
+        </div>
+    </div>
+    <div class="block">
+        <label style="margin: 13px 33px; padding: 30px">Выберите цвет</label>
+        <p>
+            <select id ='color'>
+                <option disabled selected>Выберите цвет</option>
+                <option value="Green">Зеленый</option>
+                <option value="Yellow">Желтый</option>
+                <option value="Red">Красный</option>
+                <option value="Blue">Синий</option>
+            </select>
+        </p>
+    </div>
+    <div id="inputButton">
+        <input id="load" type="submit">
+        <input id="reset" type="reset">
+    </div>
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>

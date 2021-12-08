@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заяц Никита</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        document.title = "Mikita Zayats";
+        function ShowArray(array) {
+            console.log(array.join(',  '))
+        }
+        function getMinOfArray(numArray) {
+            return Math.min.apply(null, numArray);
+        }
+        function getMaxOfArray(numArray) {
+            return Math.max.apply(null, numArray);
+        }
+        let numbers = Array();
+        for (let i = 0; i < 15; i++) {
+            numbers.push(Math.random(100))
+        }
+        
+        let newArr = numbers.map((element) => Math.abs(element));
+        let minValue = getMinOfArray(newArr);
+        let minIndex = newArr.indexOf(minValue);
+        console.log(`Индекс минимального = ${minIndex}`);
+
+        ShowArray(numbers);
+    </script>
+</body>
+
+</html>

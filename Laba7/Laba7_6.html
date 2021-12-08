@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Mikita Zayats</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		li {
+			user-select: none;
+			font-size: 24px;
+		}
+
+		.selected {
+			color: orange;
+		}
+	</style>
+</head>
+
+<body>
+	<ul id="books">
+		<li>Автор 1, Название 1</li>
+		<li>Автор 2, Название 2</li>
+		<li>Автор 3, Название 3</li>
+		<li>Автор 4, Название 4</li>
+		<li>Автор 5, Название 5</li>
+		<li>Автор 6, Название 6</li>
+		<li>Автор 7, Название 7</li>
+		<li>Автор 8, Название 8</li>
+		<li>Автор 9, Название 9</li>
+		<li>Автор 10, Название 10</li>
+	</ul>
+	<script>
+		let bookClick = ((env) => {
+			let previous = null;
+
+			return (env) => {
+				let setDefault = (e, ignoreElem) => {
+					let LIes = e.target.parentElement.querySelectorAll("li");
+					LIes.forEach(e => {
+						if (e != ignoreElem) e.classList.remove("selected");
+					});
+				}
+
+				let selectList = (e, startElement, foundedElement) => {
+					let LIes = e.target.parentElement.querySelectorAll("li");
+					let array = [];
+
+					let whoFirst = null;
+					let fillArray = false;
+					let brk = false;
+
+					LIes.forEach(liItem => {
+						if (brk) {
+							return;
+						}
+						if (fillArray) {
+							array.push(liItem);
+						}
+
+						if (whoFirst == null && (liItem == foundedElement || liItem == startElement)) {
+							array.push(liItem);
+							fillArray = true;
+
+							if (liItem == foundedElement) {
+								whoFirst = foundedElement;
+							} else if (liItem == startElement) {
+								whoFirst = startElement;
+							}
+						}
+
+						if ((whoFirst == startElement && liItem == foundedElement) ||
+							(whoFirst == foundedElement && liItem == startElement)) {
+							array.push(liItem);
+							brk = true;
+						}
+					});
+					array.forEach(liItem => liItem.classList.add("selected"));
+				}
+
+				let target = env.target;
+
+				if (target.tagName.toLowerCase() != "li") {
+					return;
+				}
+
+				if (!env.shiftKey && !env.ctrlKey) {
+					setDefault(env, target);
+					previous = target;
+					target.classList.toggle("selected");
+				}
+
+				if (env.shiftKey) {
+					if (previous == null) {
+						previous = target;
+					} else {
+						selectList(env, previous, target);
+					}
+				}
+
+				if (env.ctrlKey) {
+					target.classList.toggle("selected");
+				}
+			}
+		})();
+		let books = document.querySelector("#books");
+		books.addEventListener("click", bookClick)
+	</script>
+</body>
+
+</html>

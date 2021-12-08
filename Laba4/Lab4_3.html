@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Заяц Никита</title>
+    </head>
+    
+<body>
+    <script>
+        "use strict"
+        document.title = "Mikita Zayats";
+        let frutis = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        let citrus = ['orange', 'lemon', 'lime'];
+        console.log(frutis.join(', '));
+        console.log(citrus.join(', '));
+        console.log(frutis.concat(citrus).join(', '));
+        frutis.splice(3, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+        console.log(frutis.join(', '));
+        frutis.splice(frutis.length - 3, 3);
+        console.log(frutis.join(', '));
+        console.log(frutis.sort().join(', '));
+        console.log(frutis.reverse().join(', '));
+        console.log(frutis.sort((a, b) => {
+            if (a.length > b.length) {
+                return 1;
+            } else if (a.length < b.length) {
+                return -1
+            } else return 0;
+        }).join(', '));
+    </script>
+</body>
+
+</html

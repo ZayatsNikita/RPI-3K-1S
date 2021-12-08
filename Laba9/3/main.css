@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 25px;
+
+}
+.main-content{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 25px;
+    border: 1px solid black;
+}
+input[type=text]:focus{
+    border: 3px solid black;
+    background-color: lightgray;
+}
+input[type=submit]{
+    width: 30%;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 25px
+}
+input[type=button]{
+    width: 30%;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 25px
+}
+select {
+    width: 30%;
+    padding: 15px ;
+    margin: 15px auto;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.modal{
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal-content{
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%;
+}
+#close{
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#close1{
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+table {
+    width: 1000px;
+}
+TD, TH {
+    padding: 30px;
+    text-align: left;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+button{
+    position: relative;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 1px;
+    font-size: large;
+    outline: none;
+}
+.sub-content{
+    width: 100%;
+    height: 100vh;
+    background-image: url("razmetka.jpg");
+    position: relative;
+
+}
+#ball{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s;
+}

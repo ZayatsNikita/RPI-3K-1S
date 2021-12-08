@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lab5-3</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict"
+      let str = prompt('Введите строку', '');
+      let arrayOfStr = new Array();
+      let exp = /[а-яёА-ЯЁa-zA-Z]/;
+
+      for (let i = 0; i < str.length; i++) {
+        if (exp.test(str[i])) {
+          switch(str[i])
+          {
+            case 'я':
+              {
+                arrayOfStr.push('а');
+              }
+              break;
+            case 'Я':
+              {
+                arrayOfStr.push('А');
+              }
+              break;
+            case 'z':
+              {
+                arrayOfStr.push('a');
+              }
+              break;
+            case 'Z':
+              {
+                arrayOfStr.push('A');
+              }
+              break;
+            case 'ё':
+               {
+                 arrayOfStr.push('ж');
+               }
+               break;
+            case 'Ё':
+               {
+                 arrayOfStr.push('Ж');
+               }
+               break;  
+            case 'е':
+               {
+                 arrayOfStr.push('ё');
+               }
+               break;
+            case 'Е':
+               {
+                 arrayOfStr.push('Ё');
+               }
+               break;
+            default : arrayOfStr.push(String.fromCharCode(str.charCodeAt(i) + 1)); break;
+          }
+        }
+        else {
+          arrayOfStr.push(str[i]);
+        }   
+      }
+      console.log('Новая строка: ', str);
+      console.log('Старая строка: ', arrayOfStr.join(""));
+    </script>
+  </body>
+</html>
+

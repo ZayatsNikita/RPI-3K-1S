@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заяц Никита</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        document.title = "Mikita Zayats";
+        let b = parseInt(prompt("Введите B", ""))
+        function ShowArray(array) {
+            console.log(array.join(',  '))
+        }
+        let numbers = Array();
+        for (let i = 0; i < 15; i++) {
+            numbers.push(Math.random(100))
+        }
+        var lessThenB = numbers.filter(x => x < b);
+        let count = 0;
+        let sum = 0;
+        let countLessThenB = 0;
+        numbers.forEach((element, index) => {
+            if (((index + 1) % 2 == 1) && element > 0) {
+                count++;
+                sum += element;
+            }
+        });
+        let res = sum / count;
+        console.log(`Среднее арифмитическое положительных чисел на нечётных местах = ${res}`)
+        console.log(`Количество элементов меньше чеи ${b} = ${lessThenB.length}`);
+    </script>
+</body>
+
+</html>

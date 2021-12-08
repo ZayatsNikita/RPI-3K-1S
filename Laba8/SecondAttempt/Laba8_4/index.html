@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Zayats mikita</title>
+</head>
+
+<body>
+
+    <div id='myModal' class="modal">
+        <div class="modal-content">
+            <p id="stats">Мышка!</p>
+            <div class="object-form">
+                <label for="sensorModel">Модель сенсора</label>
+                <p><input id='sensorModel' type="text"></p>
+
+                <label for="sensorType">Тип сенсора</label>
+                <p><input id='sensorType' type="text"></p>
+
+                <label for='title'>Название</label>
+                <p><input id='title' type="text"></p>
+                
+                <label for='connectionInterface'>Интерфейс подключения</label>
+                <p><input id='connectionInterface' type="text"></p>
+                
+                <label for='dpi'>DPI:</label>
+                <p><input id='dpi' type="text"></p>
+                
+                <input id="load-data" type="submit">
+                <input id="get-table" type="button" value="Показать таблицу">
+            </div>
+        </div>
+    </div>
+    <div id="content"></div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

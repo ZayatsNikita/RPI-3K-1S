@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zayats Mikita</title>
+    <style>
+      .red, .yellow, .blue{
+	      width: 200px;
+	      height: 200px;
+        border: none;
+      }
+      .red{
+        background: red;
+        top:20%;
+        left:30%;
+        position: fixed;
+      }
+      .yellow{
+        background: yellow;
+        top:30%;
+        left:40%;
+        position: fixed;
+      }
+      .blue{
+        background: blue;
+        top:40%;
+        left:50%;
+        position: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blue" id="blueBlock"></div>
+    <div class="yellow" id="yellowBlock"></div>
+    <div class="red" id="redBlock"></div>
+    <script>
+      let idsOfBlocks = ["redBlock", "yellowBlock", "blueBlock"];
+      document.addEventListener("click", function(event) { 
+        let target = event.target; 
+        for(let i in idsOfBlocks){
+          let tempTarget = document.getElementById(idsOfBlocks[i]);
+          tempTarget.style.zIndex = "0";
+        }
+        target.style.zIndex = "1";
+      });
+  </script>
+  </body>
+</html>

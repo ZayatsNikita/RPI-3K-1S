@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Task_2</title>
+</head>
+
+<body>
+	<script>
+		function print(...args) {
+            for (let a of args) {
+                document.write('<div>');
+                    document.write(a);
+                document.write('<br></div>');
+            }
+        }
+
+		class Mouse {
+			#_sensorModel;
+			#_sensorType;
+			#_title;
+			#_connectionInterface;
+			#_dPI;
+
+			constructor(options) {
+					this.#_sensorModel = options.sensorModel;
+					this.#_sensorType = options.sensorType;
+					this.#_title = options.title;
+					this.#_connectionInterface = options.connectionInterface;
+					this.#_dPI = options.dPI;
+			}
+
+			// getters
+			get sensorModel() {
+				return this.#_sensorModel;
+			}
+			get sensorType() {
+				return this.#_sensorType;
+			}
+			get title() {
+				return this.#_title;
+			}
+			get connectionInterface() {
+				return this.#_connectionInterface;
+			}
+			get dPI() {
+				return this.#_dPI;
+			}
+
+			// setters
+			set sensorModel(sensorModel) {
+				this.#_sensorModel = sensorModel;
+			}
+			set sensorType(sensorType) {
+				this.#_sensorType = sensorType;
+			}
+			set title(title) {
+				this.#_title = title;
+			}
+			set connectionInterface(connectionInterface) {
+				this.#_connectionInterface = connectionInterface;
+			}
+			set dPI(dPI) {
+				this.#_dPI = dPI;
+			}
+
+			toString() {
+				return `sensorModel: ${this.sensorModel}.\ndPI: ${this.dPI}.\nconnectionInterface: ${this.connectionInterface}\n.sensorType: ${this.sensorType}\n.`;
+			}
+
+			print(){
+				console.log(this.toString());
+			}
+		};
+
+        class MouseWithPrinter extends Mouse{
+            constructor(options){
+                super(options);
+                this.price = options.price;
+                this.relizeDate = options.relizeDate;
+            }
+            print(){
+                console.log('MouseWithPrinter:');
+			    console.log(this.toString());
+
+			}
+            toString() {
+                let parrentData = super.toString();
+                let currentData = `$price: ${this.price}; relizeDate: ${this.relizeDate};`;
+				return parrentData + currentData;
+			}
+        }
+
+        let mouseWithPrinter1 = new MouseWithPrinter({
+            sensorModel: 'IP-213',
+            sensorType: 'Кружок',
+            title: 'Мышка для печати информации',
+            connectionInterface: 'PS/2',
+            dPI: 8913,
+            price: 123,
+            relizeDate: 'todat',
+        });
+
+        let mouseWithPrinter2 = new MouseWithPrinter({
+            sensorModel: 'IP-213',
+            sensorType: 'Кружок',
+            title: 'Мышка для печати информации',
+            connectionInterface: 'PS/2',
+            dPI: 8913,
+            price: 576,
+            relizeDate: 'todat',
+        });
+
+        let mouseWithPrinter3 = new MouseWithPrinter({
+            sensorModel: 'IP-213',
+            sensorType: 'Кружок',
+            title: 'Мышка для печати информации',
+            connectionInterface: 'PS/2',
+            dPI: 8913,
+            price: 22,
+            relizeDate: 'todat',
+        });
+
+        let mouses = [mouseWithPrinter1, mouseWithPrinter2, mouseWithPrinter3];
+
+		console.log('Индекс объекта с минимальной стоимостью: ' + mouses.map(e => e.price).indexOf(Math.min(...mouses.map(e => e.price))))
+		console.log('Индекс объекта с максимальной стоимостью: ' + mouses.map(e => e.price).indexOf(Math.max(...mouses.map(e => e.price))))
+		console.log('Суммарная стоимость всех объектов: ' + mouses.map(e => e.price).reduce((acc, curr) => acc + curr) + '$')
+		console.log('Средняя стоимость объекта: ' + mouses.map(e => e.price).reduce((acc, curr) => acc + curr) / mouses.length + '$')
+		let averageCost = mouses.map(e => e.price).reduce((acc, curr) => acc + curr) / mouses.length;
+		console.log('Кол-во объектов со стоимостью выше средней: ' + mouses.filter(e => e.price > averageCost).length)
+
+	</script>
+</body>
+
+</html>

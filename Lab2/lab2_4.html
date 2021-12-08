@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+  </head>
+    <body>
+        <table>
+        <script>
+            document.title = "Mikita Zayats";
+            let n = 1;
+            for (let i = 0; i< 10; i++){
+                document.write("<tr>");
+                for (let j = 0; j < 10; j++){
+                    let k = 1;
+                    let check = false;
+                    while (k <= 14) {
+                        let number = k * (k + 1) / 2;
+                        if (number == n) {
+                            check = true;
+                            break;
+                        }
+                    k++;
+                    }
+                    if (check) {
+                        document.write('<td><font color = "red">', n, '</font></td>');
+                    }
+                    else{
+                        document.write('<td><font color = "black">', n, '</font></td>');
+                    }
+                    n++
+                }
+                document.write('</tr>');
+            }
+        </script>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nikita</title>
+</head>
+
+<body>
+    <script>
+        function createColorTable(tagName, array) {
+            let table = document.createElement('table');
+            table.style.border = '1px solid black';
+            table.style.background = 'white';
+
+            let numId = 0;
+            array.forEach(row => {
+                let tr = table.insertRow();
+                row.forEach(column => {
+                    let td = tr.insertCell();
+                    td.id = numId;
+                    td.style.border = '1px solid black';
+                    td.style.padding = '30px';
+                    td.style.background = column;
+                    td.onclick = onCellClick;
+                    td.appendChild(document.createTextNode(''));
+                    numId += 1;
+                });
+            });
+
+            let documents = Array.from(document.getElementsByTagName(tagName));
+
+            documents.forEach(x => x.appendChild(table));
+        }
+
+        let size = 5;
+        let colors = Array(size).fill()
+            .map(x => x = Array(size).fill()
+                .map(y => y = '#' + Math.random().toString(16).slice(-6)));
+
+        function onCellClick() {
+            let pos = this.id;
+            let x = Math.floor(pos / size);
+            let y = pos - x * size;
+            document.body.style.background = colors[x][y];
+            console.log(this.innerHTML + ' ' + (x + 1) + ' ' + (y + 1));
+        }
+
+        createColorTable('body', colors);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Zaysts MIkita</title>
+</head>
+
+<body>
+    <script>
+        let pattern = 'AB';
+        let abCountRegex = new RegExp(pattern, 'ig');
+        let digitsReplacingRegex = new RegExp('\\d', 'g');
+
+        let stringForSeach = prompt('Введите строку для работы', '')
+
+        let matches = stringForSeach.match(abCountRegex);
+
+        let abCount;
+
+        if (matches == null) {
+            abCount = 0
+        } else {
+            abCount = matches.length
+        }
+
+        let stringWithDuplicateDigits = stringForSeach.replace(digitsReplacingRegex, '$&$&');
+
+        console.log(`количесвто вхождеинй \'${pattern}\' = ${abCount};`);
+        console.log(`Старая строка =  \'${stringForSeach}\';\n
+        Новая = ${stringWithDuplicateDigits};`);
+    </script>
+</body>
+
+</html>

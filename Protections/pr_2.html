@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+    <body>
+        <script>
+            document.title = "Mikita Zayats";
+            let x = parseFloat(prompt('Введите число', ""));
+            let st = parseFloat(prompt('Введите степень', ""));
+            function GetElement(x, n, priviusRcesult, stepen){
+                if (n < stepen){
+                    let resultNew = priviusRcesult * x;
+                    n++;
+                    return GetElement(x, n, resultNew, stepen);
+                }
+                else{
+                    return priviusRcesult;
+                }
+            }
+            let result = x;
+            result = GetElement(x, 1, result, st);
+            document.write('Ответ в виде функции: ' + result + "<br>");
+            document.write('Ответ с использованием стандартных функций Math: ' + Math.pow(x, st));
+        </script>
+    </body>
+</html>

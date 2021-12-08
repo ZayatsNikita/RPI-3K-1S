@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+    <body>
+        <script>
+            document.title = "Mikita Zayats";
+            let x = parseFloat(prompt('Введите x'));
+            let y = parseFloat(prompt('Введите y'));
+            let z = parseFloat(prompt('Введите z'));
+                function Calculate(x, y, z){
+                    return Math.sqrt(y + Math.pow(x, 1/3)) - 1 + 2 * z;
+                }
+                document.write("<h4>Текст задания</h4>");
+                document.write("В соответствии со своим вариантом написать скрипт для вычисления значения функции" +
+                "b=f(x,y,z). Значения x, y и z должны вводиться пользователем, используя метод prompt." +
+                "При выводе информации предусмотреть форматирование документа, вывод текста задания, включая рисунок исходной функции, и вывод информации о разработчике скрипта."
+                + "<br>");
+                let result = Calculate(x,y,z);
+                document.write("Вид функции<br>");
+                document.write('<img src = "s2.jpg"><br>');
+                document.write('<i>Ответ:</i> result = ' + result);
+        </script>
+    </body>
+</html>

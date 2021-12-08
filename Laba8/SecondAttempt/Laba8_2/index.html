@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Zayats Mikita</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+</head>
+
+<body class="bg-info">
+    <div>
+        <form id="passportForm">
+            <div class="row">
+                <div class="form-group offset-md-2">
+                    <label>Серия паспорта</label>
+                    <p><input id='seriesPassport' type="text"></p>
+                </div>
+                <div class="form-group  offset-md-2">
+                    <label>Номер паспорта</label>
+                    <p><input id='numOfPassport' type="text"></p>
+                </div>
+                <div class="form-group  offset-md-2">
+                    <label>Номер бланка</label>
+                    <p><input id='numOfBlank' type="text"></p>
+                </div>
+                <div class="form-group  offset-md-2">
+                    <p><select id='subject'>
+                            <option disabled selected>Выберите предмет</option>
+                            <option value="Русский">Русский</option>
+                            <option value="Математика">Математика</option>
+                            <option value="Беллоруский">Беллоруский</option>
+                            <option value="Физика">Физика</option>
+                        </select></p>
+                </div>
+                <div class="form-group  offset-md-2">
+                    <p><input id="code" type="text" readonly='readonly' value="Код потверждения: 424636"></p>
+                    <label>Код потверждения</label>
+                </div>
+                <div class="form-group  offset-md-2">
+                    <p><input id='enteredCode' type="text"></p>
+                </div>
+                <div class="form-group  offset-md-2">
+                    <input id="load" type="submit" value="Отправить">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

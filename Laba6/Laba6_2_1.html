@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Zayats</title>
+</head>
+
+<body>
+	<script>
+		class Mouse {
+			#_sensorModel;
+			#_sensorType;
+			#_title;
+			#_connectionInterface;
+			#_dPI;
+
+			constructor(...args) {
+				if (args[0] instanceof Mouse) {
+					let mouse = args[0];
+					this.#_sensorModel = mouse.sensorModel;
+					this.#_sensorType = mouse.sensorType;
+					this.#_title = mouse.title;
+					this.#_connectionInterface = mouse.connectionInterface;
+					this.#_dPI = mouse.dPI;
+				} else {
+					this.#_sensorModel = args[0];
+					this.#_sensorType = args[1];
+					this.#_title = args[2];
+					this.#_connectionInterface = args[3];
+					this.#_dPI = args[4];
+				}
+			}
+
+			// getters
+			get sensorModel() {
+				return this.#_sensorModel;
+			}
+			get sensorType() {
+				return this.#_sensorType;
+			}
+			get title() {
+				return this.#_title;
+			}
+			get connectionInterface() {
+				return this.#_connectionInterface;
+			}
+			get dPI() {
+				return this.#_dPI;
+			}
+
+			// setters
+			set sensorModel(sensorModel) {
+				this.#_sensorModel = sensorModel;
+			}
+			set sensorType(sensorType) {
+				this.#_sensorType = sensorType;
+			}
+			set title(title) {
+				this.#_title = title;
+			}
+			set connectionInterface(connectionInterface) {
+				this.#_connectionInterface = connectionInterface;
+			}
+			set dPI(dPI) {
+				this.#_dPI = dPI;
+			}
+
+			toString() {
+				let data = JSON.stringify(this);
+				return data;
+			}
+
+			printInConsole(){
+				console.log('Mouse : ');
+				console.log(`sensorModel: ${this.sensorModel}\nsensorType: ${this.sensorType}\ntitle: ${this.title}`,
+				`\nconnectionInterface: ${this.connectionInterface}\ndPI: ${this.dPI}.`)
+			}
+		};
+
+
+
+		let mouse = new Mouse('GX-123', 'Лазер', 'Мышь никиты игровая', 'USB', 540);
+		mouse.printInConsole();
+	</script>
+</body>
+
+</html>

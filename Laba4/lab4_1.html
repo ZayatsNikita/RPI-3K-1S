@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заяц Никита</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        document.title = "Mikita Zayats";
+        function ShowArray(array){
+            console.log(array.join(',  '))
+        }
+        let treug = new Array()
+        let kvd = new Array();
+        for (let i = 1; i <= 10; i++) {
+            treug.push(i * (i + 1) / 2);
+        }
+        for (let i = 1; i <= 10; i++){
+            kvd.push(i * i);
+        }
+        let rez = treug.concat(kvd);
+        rez.sort((x, y) =>{
+            if (y == x) {
+                return 0;
+            } else if (y > x){
+                return 1;
+            } else {
+                return -1
+            }
+        })
+        ShowArray(treug);
+        ShowArray(kvd);
+        ShowArray(rez);
+    </script>
+</body>
+
+</html>

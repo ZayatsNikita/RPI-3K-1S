@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+    <body>
+        <script>  
+            document.title = "Mikita Zayats";
+            let x = parseFloat(prompt('Введите число', ""));
+            let n = 0;
+            let result = Math.PI / 2;
+            let resultNew = result;
+            do{
+                result = resultNew;
+                resultNew = result + Math.pow(-1, (n + 1)) / (2 * n + 1) * Math.pow(x, -(2 * n + 1));
+                n++;
+                delta = Math.abs(resultNew - result);
+            } while(delta > 0.000000001)
+            document.write('Ответ в виде разложениия в ряд Тейлора: ' + result + "<br>");
+            document.write('количество n = ' + n + ';')
+            document.write('Ответ с использованием стандартных функций Math: ' + Math.atan(x));
+        </script>
+    </body>
+</html>

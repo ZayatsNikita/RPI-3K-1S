@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Zayats</title>
+</head>
+
+<body>
+	<script>
+		function Mouse(sensorModel, sensorType, title, connectionInterface, dPI) {
+			this._sensorModel = sensorModel;
+			this._sensorType = sensorType;
+			this._title = title;
+			this._connectionInterface = connectionInterface;
+			this._dPI = dPI;
+		}
+
+		Mouse.prototype = {
+			get sensorModel() {
+				return this._sensorModel;
+			},
+			get sensorType() {
+				return this._sensorType;
+			},
+			get title() {
+				return this._title;
+			},
+			get connectionInterface() {
+				return this._connectionInterface;
+			},
+			get dPI() {
+				return this._dPI;
+			},
+
+			// setters
+			set sensorModel(sensorModel) {
+				this._sensorModel = sensorModel;
+			},
+			set sensorType(sensorType) {
+				this._sensorType = sensorType;
+			},
+			set title(title) {
+				this._title = title;
+			},
+			set connectionInterface(connectionInterface) {
+				this._connectionInterface = connectionInterface;
+			},
+			set dPI(dPI) {
+				this._dPI = dPI;
+			},
+		}
+		Mouse.prototype.realeseDate = '1 октября 2018г';
+
+		Mouse.prototype.logInformation = function () {
+			console.log(`sensorModel: ${this.sensorModel}\nsensorType: ${this.sensorType}\ntitle: ${this.title}`,
+				`\nconnectionInterface: ${this.connectionInterface}\nДата выхода на рынок: ${this.realeseDate}\ndPI: ${this.dPI}.`)
+		}
+
+		let mouse = new Mouse('МГТ-321', 'Лазер', 'Мышка никиты - 2', 'USB', 321);
+		mouse.logInformation();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Zaysts MIkita</title>
+</head>
+
+<body>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+        }
+        function replacer(match) {
+            
+            if (match.length < 3) {
+                return match;
+            }
+
+            let shuffledWord = '';
+            let originalWord = match;
+            let splitedMatch = match.split('');
+
+            while (splitedMatch.length > 3) {
+                let startIndex = getRandomInt(2, splitedMatch.length - 1);
+                shuffledWord += splitedMatch.splice(startIndex, 1);
+            }
+            shuffledWord += splitedMatch[1];
+
+            return originalWord[0] + shuffledWord + originalWord[originalWord.length - 1];
+        }
+
+        // prompt('Введите строку для обработки', '')
+        let originalString = '1Маруся2,  3Никита5! ыф *';
+        let shuffLetterRegExp = new RegExp('\\b\\S+\\b', 'g');
+        let stringWithoutSpacesBetwinFirstAndSecondWord = originalString.replace(shuffLetterRegExp, replacer);
+
+        console.log(`Старая строка = ${originalString}`);
+        console.log(`Новая строка = ${stringWithoutSpacesBetwinFirstAndSecondWord}`);
+    </script>
+</body>
+
+</html>

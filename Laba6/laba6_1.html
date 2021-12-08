@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Zaysts MIkita</title>
+</head>
+
+<body>
+    <script>
+        function print(...args) {
+            for (let a of args) {
+                document.write('<div>');
+                    document.write(a);
+                document.write('<br></div>');
+            }
+        }
+
+        function pushResult(results, result, title) {
+            results.push({
+                result: result,
+                title: title,
+                toString() {
+                    return 'TITLE: ' + title + '<br> RESULT: ' + result;
+                }
+            });
+        }
+
+        let elements = [];
+
+        let mouseOfNikita = {
+            sensorModel: 'GF-312',
+            sensorType: 'Lizer',
+            title: 'Nikita\'s mouse',
+            connectionInterface: 'USB 3.9',
+            dPI: 400,
+            toString() {
+                return JSON.stringify(this, null, '<br>');
+            }
+        }
+
+        pushResult(elements, mouseOfNikita, 'mouse');
+
+        print(...elements);
+    </script>
+</body>
+
+</html>

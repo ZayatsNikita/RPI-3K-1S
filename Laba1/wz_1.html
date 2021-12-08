@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      .smallOffset{
+        margin-left: 30%;
+      }
+      .bigOffset{
+        margin-left: 31%;
+      }
+      .veryBigOffset{
+        margin-left: 33%;
+      }
+      .withoutTopMargin{
+        margin-top: 0%;
+      }
+      .withoutBottomMargin{
+        margin-bottom: 0%;
+      }
+      .rightMargin{
+        margin-right: 40%;
+      }
+      .fat{
+        font-weight:bold;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заяц Никита</title>
+  </head>
+  <body>
+    <script>      
+      let prices =[];
+      let names = [];
+      while(true)
+      {  
+        IsThereNeedForGoods = confirm("Добавить товар?");
+        if (IsThereNeedForGoods)
+        {
+          let name = prompt("Введите название товара");
+          let price = parseFloat(prompt("Введите значение стоимость товара", ""));
+          prices.push(price);
+          names.push(name);
+        }
+        else{
+          break;
+        }
+      }
+
+      do{
+          var discount = parseFloat(prompt("Введите значение скидки",""));
+      }while(discount > 5 || discount < 1 || Number.isNaN(discount))
+
+      let totalPrice = 0;
+      document.write("<p class=\"smallOffset withoutBottomMargin\">ООО \"Евроторг\"</p> ");
+        document.write("<p class=\"bigOffset fat withoutBottomMargin withoutTopMargin\">СПАСИБО ЗА ПОКУПКУ!</p>");
+        let now = new Date();
+        document.write("<p class=\"smallOffset withoutTopMargin\">Дата покупки: ",now.toLocaleDateString()," ",now.getHours(),":",now.getMinutes(),"</p>");
+        for(let i = 0; i< names.length; i++)
+        {
+          let result = names[i].toString() + " =" + prices[i].toString()
+          totalPrice += prices[i];
+          document.write("<p class=\"smallOffset\">Наименование товара</p>");
+          document.write("<pre class=\"bigOffset\">", names[i], "      =", prices[i],"</pre>");
+        }
+        document.write("<p class=\"smallOffset withoutBottomMargin fat\";>Итого:</p>");
+        document.write("<p class=\"veryBigOffset fat withoutBottomMargin withoutTopMargin;\">", totalPrice, " BYN</p>");
+        document.write("<p class=\"smallOffset withoutBottomMargin withoutTopMargin\";>Скидка: ", discount, "%</p>");
+        let discountValue = (totalPrice * discount / 100);
+        document.write("<p class=\"veryBigOffset withoutBottomMargin withoutTopMargin\";>", discountValue, " BYN</p>");
+        document.write("<p class=\"smallOffset fat withoutBottomMargin withoutTopMargin\";>Сумма со скидкой</p>");
+        let resultPrice = totalPrice = totalPrice - discountValue;
+        document.write("<p class=\"veryBigOffset fat withoutTopMargin\";>", resultPrice, " BYN</p>");
+    </script>
+  </body>
+</html>

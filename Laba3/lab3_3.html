@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+    <body>
+        <script>
+            document.title = "Mikita Zayats";
+            let x = parseFloat(prompt('Введите число', ""));
+            function GetElement(x, n, priviusRcesult){
+                if (n < 100){
+                    let resultNew = priviusRcesult + Math.pow(-1, (n + 1)) / (2 * n + 1) * Math.pow(x, -(2 * n + 1));
+                    n++;
+                    return GetElement(x, n, resultNew);
+                }
+                else{
+                    return priviusRcesult;
+                }
+            }
+            let result = Math.PI / 2;
+            result = GetElement(x, 0, result);
+            document.write('Ответ в виде разложениия в ряд Тейлора: ' + result + "<br>");
+            document.write('Ответ с использованием стандартных функций Math: ' + Math.atan(x));
+        </script>
+    </body>
+</html>

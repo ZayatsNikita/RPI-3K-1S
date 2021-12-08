@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+		body {
+			margin-left: 635px;
+		}
+
+		li {
+			list-style-type: none;
+		}
+
+		ul {
+			padding-left: 20px;
+		}
+
+		img {
+			width: 16px;
+			height: 16px;
+			float: left;
+			margin-right: 3px;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.visible {
+			display: block;
+		}
+
+		.allocated:hover {
+			cursor: pointer;
+			font-weight: bold;
+		}
+	</style>
+
+	<meta charset="utf-8">
+	<script>
+		document.addEventListener("DOMContentLoaded", function (e) {
+
+			let labels = document.querySelectorAll(".allocated");
+
+			for (let i = 0; i < labels.length; i++) {
+				labels[i].addEventListener('click', function (e) {
+					this.parentElement.querySelector(".hidden").classList.toggle("visible");
+				})
+			}
+		})
+
+	</script>
+</head>
+
+<body>
+	<div>
+		<ul>
+			<li><img src="icons/этот_компьютер.ico" alt="">
+				<p class="allocated"> Этот компьютер</p>
+				<ul class="hidden">
+			</li>
+			<li><img src="icons/локальный диск.ico" alt="">
+				<p class="allocated">Локальный диск (D:)</p>
+				<ul class="hidden">
+					<li><img src="icons/папка.ico" alt="">folder one</li>
+					<li> <img src="icons/папка.ico" alt="">folder two</li>
+				</ul>
+			</li>
+			<li><img src="icons/локальный диск.ico" alt="">
+				<p class="allocated">Локальный диск (E:)</p>
+				<ul class="hidden">
+					<li><img src="icons/папка.ico" alt=""> folder three</li>
+					<li><img src="icons/папка.ico" alt=""> folder five</li>
+					<li><img src="icons/папка.ico" alt="">
+						<p class="allocated">folder with inner files</p>
+						<ul class="hidden">
+							<li><img src="icons/папка.ico" alt=""> inner one </li>
+							<li><img src="icons/папка.ico" alt=""> inner two </li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		</li>
+		</ul>
+	</div>
+</body>
+
+</html>

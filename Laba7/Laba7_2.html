@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+		body {
+			font-size: 36px;
+			background-color: rgb(250, 173, 148);
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>Task_2</title>
+</head>
+
+<body>
+	<div id="content"></div>
+	<script>
+		function getLingks(){
+			let list = document.createElement("ul");
+            ["index-html", "https://google.com", "https://www.gstu.by", "file:///G:/users/RPI/test.html", "/local/path", "https://www.tut.by/"].forEach((elm) => {
+				let liComponent=document.createElement("li");
+                let linkComponent = document.createElement('a');
+                linkComponent.setAttribute('href', elm);
+                linkComponent.innerText =elm;
+                liComponent.appendChild(linkComponent);
+                list.appendChild(liComponent);
+			});
+            return list;
+		}
+	</script>
+	<script>
+		
+		window.onload=function() {
+           document.getElementById("content").appendChild(getLingks());
+           let links = document.links;
+		    for (let i = 0; i < links.length; i++) {
+			    if (links[i].href.startsWith('http')){
+				links[i].setAttribute('style', "text-decoration: none; border-bottom: 3px dashed;")
+			}}
+        }
+
+	</script>
+</body>
+
+</html>

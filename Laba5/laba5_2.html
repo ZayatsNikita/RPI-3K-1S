@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Zaysts MIkita</title>
+</head>
+
+<body>
+    <script>
+        let originalString = prompt('Введите строку для обработки', '');
+        let countOfWordsLongerThatFiveCharactersRegExp = new RegExp('\\b[a-zA-Z0-9а-яА-Я]{6,}','g')
+        let replaceSpacesBetwinFirstAndSecondWordRegExp = new RegExp('\\b\\s+\\b');
+        let stringWithoutSpacesBetwinFirstAndSecondWord = originalString.replace(replaceSpacesBetwinFirstAndSecondWordRegExp, '');
+
+        let matches = originalString.match(countOfWordsLongerThatFiveCharactersRegExp);
+
+        let matchesCount = matches == null ? 0 :matches.length;
+
+        console.log(`Количество слов с 6 и более символами = ${matchesCount}`);
+        console.log(`Старая строка = ${originalString}`);
+        console.log(`Новая строка = ${stringWithoutSpacesBetwinFirstAndSecondWord}`);
+    </script>
+</body>
+
+</html>
